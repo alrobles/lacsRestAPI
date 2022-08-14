@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: RestRserve OpenAPI
+version: '1.0'
+servers:
+  - url: /
+  paths:
+  /fib:
+  get:
+  description: Classify an abstract given a PU learning model.
+parameters:
+  - name: "scoreabstract"
+description: "A string containing an abstract"
+in: query
+schema:
+  type: string
+example: 10
+required: true
+responses:
+  200:
+  description: API response
+content:
+  text/plain:
+  schema:
+  type: string
+example: 'This is an exmample'
+400:
+  description: Bad Request
